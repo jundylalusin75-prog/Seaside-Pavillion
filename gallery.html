@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -9,34 +8,103 @@
 <title>Gallery | Seaside Pavilion</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* CLEAN BUILT-IN STYLES (fix width + layout) */
+
+.gallery {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.img-box img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.featured .img-box img {
+  height: 320px;
+}
+
+.img-box:hover img {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.95);
+  text-align: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 5%;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+@media (max-width: 768px) {
+  .featured {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 </head>
 
 <body>
 
-<div class="page-shell">
-
-<header class="site-header">
-
-<div class="header-wrap">
-
-<a class="brand" href="index.html">Seaside Pavilion</a>
-
-<nav class="site-nav">
-
-<a href="index.html">Home</a>
-<a href="packages.html">Packages</a>
-<a href="booking.html">Booking</a>
-<a href="policies.html">Policies</a>
-<a href="location.html">Location</a>
-<a class="active" href="gallery.html">Gallery</a>
-
-</nav>
-
-</div>
-
+<header>
+<h2 style="text-align:center;">Seaside Pavilion</h2>
 </header>
 
 <main>
@@ -44,49 +112,49 @@
 <section class="gallery">
   <h2>Explore Our Place</h2>
 
+  <!-- Featured -->
   <div class="featured">
-    <div class="img-box">
-      <img src="Photos/kubo-lounge-beach-view.jpg">
-    </div>
-    <div class="img-box">
-      <img src="Photos/beach-front.jpg">
-    </div>
+    <div class="img-box"><img src="Photos/kubo-lounge-beach-view.jpg"></div>
+    <div class="img-box"><img src="Photos/beach-front.jpg"></div>
   </div>
 
+  <!-- Gallery -->
   <div class="gallery-grid">
-    <img src="Photos/beach-front-3.jpg">
-    <img src="Photos/beach-front-4.jpg">
-    <img src="Photos/beach-front-5.jpg">
-    <img src="Photos/beach-water.jpg">
 
-    <img src="Photos/pavilion-night.jpg">
-    <img src="Photos/pavilion-exterior.jpg">
-    <img src="Photos/exterior-pavillion.jpg>
-    <img src="Photos/exterior-pavillion-2.jpg>
+    <div class="img-box"><img src="Photos/beach-front-3.jpg"></div>
+    <div class="img-box"><img src="Photos/beach-front-4.jpg"></div>
+    <div class="img-box"><img src="Photos/beach-front-5.jpg"></div>
+    <div class="img-box"><img src="Photos/beach-water.jpg"></div>
 
-    <img src="Photos/exterior-pavilion-2.jpg">
-    <img src="Photos/exterior-pavilion-5.jpg">
-    <img src="Photos/exterior-pavilion-6.jpg">
+    <div class="img-box"><img src="Photos/pavilion-night.jpg"></div>
+    <div class="img-box"><img src="Photos/pavilion-exterior.jpg"></div>
 
-    <img src="Photos/camping-area.jpg">
-    <img src="Photos/camping-area-3.jpg>
-    <img src="Photos/camping-area-2.jpg>
-    <img src="Photos/interior-pavillion.jpg>
-      
-    <img src="Photos/interior-pavilion.jpg">
-    <img src="Photos/interior-pavilion-2.jpg">
-    <img src="Photos/interior-pavilion-entrance.jpg">
-    <img src="Photos/interior-pavilion-twin-bed.jpg">
+    <div class="img-box"><img src="Photos/exterior-pavilion.jpg"></div>
+    <div class="img-box"><img src="Photos/exterior-pavilion-2.jpg"></div>
+    <div class="img-box"><img src="Photos/exterior-pavilion-5.jpg"></div>
+    <div class="img-box"><img src="Photos/exterior-pavilion-6.jpg"></div>
 
-    <img src="Photos/interior-hallway.jpg">
-    <img src="Photos/kitchen-and-restroom.jpg">
-    <img src="Photos/grill-area.jpg">
-    <img src="Photos/outdoor-shower.jpg">
+    <div class="img-box"><img src="Photos/camping-area.jpg"></div>
+    <div class="img-box"><img src="Photos/campung-area-3.jpg"></div>
+    <div class="img-box"><img src="Photos/csmping-area-2.jpg"></div>
 
-    <img src="Photos/house-exterior.jpg">
-    <img src="Photos/property-entrance.jpg">
+    <div class="img-box"><img src="Photos/interior-pavilion.jpg"></div>
+    <div class="img-box"><img src="Photos/interior-pavilion-2.jpg"></div>
+    <div class="img-box"><img src="Photos/interior-pavilion-entrance.jpg"></div>
+    <div class="img-box"><img src="Photos/interior-pavilion-twin-bed.jpg"></div>
+
+    <div class="img-box"><img src="Photos/interior-hallway.jpg"></div>
+    <div class="img-box"><img src="Photos/kitchen-and-restroom.jpg"></div>
+    <div class="img-box"><img src="Photos/grill-area.jpg"></div>
+    <div class="img-box"><img src="Photos/outdoor-shower.jpg"></div>
+
+    <div class="img-box"><img src="Photos/house-exterior.jpg"></div>
+    <div class="img-box"><img src="Photos/property-entrance.jpg"></div>
+
   </div>
 </section>
+
+</main>
 
 <!-- Lightbox -->
 <div id="lightbox">
@@ -96,18 +164,7 @@
   <span class="next">&#10095;</span>
 </div>
 
-</main>
-
-<footer class="footer">
-
-<p>© 2026 Seaside Pavilion at Casa Lalusin</p>
-
-</footer>
-
-</div>
-
 <script>
-// Lightbox (same as before)
 const images = document.querySelectorAll(".img-box img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
@@ -135,20 +192,7 @@ document.querySelector(".prev").onclick = () => {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   lightboxImg.src = images[currentIndex].src;
 };
-
-// Scroll animation
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-document.querySelectorAll(".gallery img").forEach(img => {
-  observer.observe(img);
-});
 </script>
-  
+
 </body>
 </html>
