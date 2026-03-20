@@ -32,58 +32,48 @@ body {
   flex-direction: column;
 }
 
+/* ===== GLASS HEADER ===== */
+
 .site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 
-position:sticky;
+  background: rgba(31, 78, 95, 0.6);
+  backdrop-filter: blur(10px);
 
-top:0;
-
-z-index:25;
-
-background:rgba(15,63,88,0.75);
-
-backdrop-filter:blur(12px);
-
--webkit-backdrop-filter:blur(12px);
-
-border-bottom:1px solid rgba(255,255,255,0.2);
-
-box-shadow:0 8px 20px rgba(0,0,0,0.08);
-
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .header-wrap {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 14px 20px;
+  max-width: 1100px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.brand{
-
-color:#fff;
-
-text-decoration:none;
-
-font-weight:700;
-
-letter-spacing:0.05em;
-
-font-size:18px;
-
+  padding: 14px 20px;
 }
 
 .site-nav a {
-  color: #ebf7ff;
-  text-decoration: none;
-  margin-left: 12px;
-  font-weight: 600;
+  color: white;
+  opacity: 0.85;
+  margin-left: 18px;
+  transition: 0.3s;
 }
 
-.site-nav a.active {
-  text-decoration: underline;
+.site-nav a:hover {
+  opacity: 1;
+}
+
+.site-nav .active {
+  background: rgba(255,255,255,0.15);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+body {
+  padding-top: 70px;
 }
 
 .hero {
@@ -1451,15 +1441,14 @@ body {
 }
 
 .btn {
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 999px;
-  text-decoration: none;
   font-weight: 500;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn.primary {
-  background: #1f4f63;
+  background: linear-gradient(135deg, #1f4f63, #2f7a8c);
   color: white;
 }
 
@@ -1468,10 +1457,9 @@ body {
   color: #1f4f63;
 }
 
-/* Hover */
 .btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* ===== PREVIEW ===== */
@@ -1534,13 +1522,14 @@ img {
   background: #f7f9fb;
   padding: 20px;
   border-radius: 14px;
-  transition: 0.25s ease;
   border: 1px solid #e3e8ee;
+
+  transition: all 0.25s ease;
 }
 
 .highlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
 .floating-buttons {
@@ -1603,3 +1592,30 @@ img {
 .section-box p {
   color: #5f6f7a;
 }
+
+.hero-content {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-box {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.section-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
