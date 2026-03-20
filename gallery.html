@@ -117,6 +117,7 @@ const lightboxImg = document.getElementById("lightbox-img");
 
 let currentIndex = 0;
 
+// Lightbox click
 images.forEach((img, index) => {
   img.addEventListener("click", () => {
     currentIndex = index;
@@ -125,19 +126,35 @@ images.forEach((img, index) => {
   });
 });
 
+// Close
 document.querySelector(".close").onclick = () => {
   lightbox.style.display = "none";
 };
 
+// Next
 document.querySelector(".next").onclick = () => {
   currentIndex = (currentIndex + 1) % images.length;
   lightboxImg.src = images[currentIndex].src;
 };
 
+// Prev
 document.querySelector(".prev").onclick = () => {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   lightboxImg.src = images[currentIndex].src;
 };
+
+// ✅ ADD THIS PART (scroll animation fix)
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+images.forEach(img => {
+  observer.observe(img);
+});
 </script>
 
 </body>
