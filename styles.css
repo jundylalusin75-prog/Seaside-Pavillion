@@ -946,3 +946,58 @@ align-items:flex-start;
   transform: scale(1.05);
   transition: 0.3s ease;
 }
+
+/* IMAGE BOX */
+.img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* IMAGES */
+.img-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* FEATURED */
+.featured .img-box img {
+  height: 350px;
+}
+
+/* HOVER ZOOM */
+.img-box:hover img {
+  transform: scale(1.08);
+}
+
+/* OVERLAY TEXT */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  font-size: 14px;
+  text-align: left;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.img-box:hover .overlay {
+  opacity: 1;
+}
+
+/* FADE-IN ANIMATION */
+.gallery img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s ease;
+}
+
+.gallery img.show {
+  opacity: 1;
+  transform: translateY(0);
+}
