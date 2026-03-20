@@ -140,7 +140,8 @@
 </div>
 
 <script>
-const images = document.querySelectorAll(".gallery img");
+// Lightbox (same as before)
+const images = document.querySelectorAll(".img-box img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
@@ -167,6 +168,19 @@ document.querySelector(".prev").onclick = () => {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
   lightboxImg.src = images[currentIndex].src;
 };
+
+// Scroll animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".gallery img").forEach(img => {
+  observer.observe(img);
+});
 </script>
   
 </body>
