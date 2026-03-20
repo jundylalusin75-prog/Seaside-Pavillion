@@ -1531,11 +1531,16 @@ img {
 }
 
 .highlight-card {
-  background: white;
+  background: #f7f9fb;
   padding: 20px;
   border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  text-align: left;
+  transition: 0.25s ease;
+  border: 1px solid #e3e8ee;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .floating-buttons {
@@ -1568,4 +1573,33 @@ img {
     padding: 15px;
   }
 
+}
+
+/* ===== UNIFIED SECTION STYLE ===== */
+
+.section-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  margin-bottom: 40px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2f7a8c;
+  background: #e7f3f7;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.section-box h2 {
+  margin-bottom: 10px;
+}
+
+.section-box p {
+  color: #5f6f7a;
 }
