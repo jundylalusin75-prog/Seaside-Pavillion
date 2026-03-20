@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,102 +9,25 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-
-<style>
-/* CLEAN BUILT-IN STYLES (fix width + layout) */
-
-.gallery {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.featured {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
-}
-
-.img-box {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.img-box img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  transition: 0.3s;
-}
-
-.featured .img-box img {
-  height: 320px;
-}
-
-.img-box:hover img {
-  transform: scale(1.05);
-}
-
-/* LIGHTBOX */
-#lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.95);
-  text-align: center;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  margin-top: 5%;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 35px;
-  color: white;
-  cursor: pointer;
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-
-@media (max-width: 768px) {
-  .featured {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
 </head>
 
 <body>
 
-<header>
-<h2 style="text-align:center;">Seaside Pavilion</h2>
+<div class="page-shell">
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a class="brand" href="index.html">Seaside Pavilion</a>
+
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="packages.html">Packages</a>
+      <a href="booking.html">Booking</a>
+      <a href="policies.html">Policies</a>
+      <a href="location.html">Location</a>
+      <a class="active" href="gallery.html">Gallery</a>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -114,11 +37,15 @@
 
   <!-- Featured -->
   <div class="featured">
-    <div class="img-box"><img src="Photos/kubo-lounge-beach-view.jpg"></div>
-    <div class="img-box"><img src="Photos/beach-front.jpg"></div>
+    <div class="img-box">
+      <img src="Photos/kubo-lounge-beach-view.jpg" alt="">
+    </div>
+    <div class="img-box">
+      <img src="Photos/beach-front.jpg" alt="">
+    </div>
   </div>
 
-  <!-- Gallery -->
+  <!-- Gallery Grid -->
   <div class="gallery-grid">
 
     <div class="img-box"><img src="Photos/beach-front-3.jpg"></div>
@@ -156,6 +83,12 @@
 
 </main>
 
+<footer class="footer">
+  <p>© 2026 Seaside Pavilion at Casa Lalusin</p>
+</footer>
+
+</div>
+
 <!-- Lightbox -->
 <div id="lightbox">
   <span class="close">&times;</span>
@@ -165,7 +98,7 @@
 </div>
 
 <script>
-const images = document.querySelectorAll(".img-box img");
+const images = document.querySelectorAll(".gallery img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
