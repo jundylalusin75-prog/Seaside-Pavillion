@@ -941,3 +941,8 @@ align-items:flex-start;
   border-radius: 10px;
   cursor: pointer;
 }
+
+.gallery img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
