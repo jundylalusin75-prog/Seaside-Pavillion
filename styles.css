@@ -1645,7 +1645,10 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: linear-gradient(
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.6)
+  );
 }
 
 .hero-content {
