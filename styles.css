@@ -1518,13 +1518,14 @@ img {
   margin-bottom: 20px;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.6)
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.55)
   );
 }
 
@@ -1953,4 +1954,54 @@ body{
 .btn:hover{
   transform:translateY(-2px);
   box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.package-card.featured .price-chip{
+  background:rgba(255,255,255,0.2);
+  color:white;
+  border:1px solid rgba(255,255,255,0.3);
+}
+
+.package-card.featured small{
+  color:#d6eefc;
+}
+
+.highlight-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  align-items:center;
+}
+
+.highlight-card{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-height:130px;
+}
+
+.hero-content{
+  background:rgba(0,0,0,0.35);
+  backdrop-filter:blur(6px);
+  padding:30px;
+  border-radius:16px;
+  max-width:600px;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,#1f4f63,#2f7a8c);
+  color:white;
+}
+
+.btn.secondary{
+  background:white;
+  color:#1f4f63;
+}
+
+.highlight-card{
+  text-decoration:none;
+  color:inherit;
+  display:block;
 }
