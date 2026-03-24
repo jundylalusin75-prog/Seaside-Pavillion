@@ -1846,6 +1846,15 @@ body {
   grid-column: span 1; /* prevents weird stretching */
 }
 
-.package-card.featured {
-  grid-column: span 1; /* prevents weird stretching */
+.package-card {
+  word-wrap: break-word;
+}
+
+.package-card {
+  transition: all 0.25s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
