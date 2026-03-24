@@ -1225,7 +1225,9 @@ body {
 .hero-content {
   position: relative;
   text-align: center;
-  color: white;
+  background:rgba(0,0,0,0.35);
+  padding:25px;
+  border-radius:16px;
   max-width: 700px;
   padding: 20px;
 }
@@ -1879,4 +1881,76 @@ main {
 
 .package-card{
   justify-content: space-between;
+}
+
+.price-row{
+  display:flex;
+  gap:10px;
+  margin:10px 0 15px;
+}
+
+.price-chip{
+  flex:1;
+  background:#eaf4fa;
+  border-radius:12px;
+  padding:12px;
+  text-align:center;
+  font-weight:600;
+  font-size:15px;
+  border:1px solid #d6e6ef;
+}
+
+.price-chip small{
+  display:block;
+  font-size:11px;
+  opacity:0.7;
+  margin-bottom:4px;
+}
+
+body{
+  padding-top:100px; /* increase slightly */
+}
+
+.announcement-bar{
+  margin-top:-6px;
+}
+
+.section-box p{
+  margin-bottom:20px;
+  line-height:1.7;
+}
+
+.highlight-card{
+  background:#ffffff;
+  border:1px solid #d6e6ef;
+  border-radius:14px;
+  padding:18px;
+  transition:all 0.25s ease;
+}
+
+.highlight-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.1);
+}
+
+.section-box:nth-child(even){
+  background:#f6fbff;
+}
+
+.btn{
+  transition:all 0.25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.btn{
+  transition:all 0.25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
